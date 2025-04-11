@@ -10,6 +10,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 The repository contains three directories:
 
+- `figures` - contains fig and jpf files for all figures, including supplementary figures
+- `functions`- contains all functions that are used in the scripts
 - `ścripts` - contains all script files (figure scripts and auxiliary scripts)
-- `figures' - contains fig and jpf files for all figures, including supplementary figures
--  `functions`- contains all functions that are used in the scripts
