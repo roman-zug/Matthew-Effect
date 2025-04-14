@@ -16,4 +16,4 @@ The repository contains three directories:
 
 To create Figure 1, run the script `Figure_1.m`, and so on. Some scripts require other scripts to be run first. 
 For example, to create Figure 5, you will first need to run `maketask.m`, `runtask.m`, `collate_fitness.m`. `optimization.m`, and `categorize.m` 
-before you can run `Figure_5.m`. 
+(in this order) before you can run `Figure_5.m`. 
