@@ -13,3 +13,5 @@ The repository contains three directories:
 - `figures` - contains fig and jpf files for all figures, including supplementary figures
 - `functions`- contains all functions that are used in the scripts
 - `ścripts` - contains all script files (figure scripts and auxiliary scripts)
+
+For example, to create Figure 1, run the script `Figure_1.m`.
