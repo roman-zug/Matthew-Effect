@@ -14,4 +14,6 @@ The repository contains three directories:
 - `functions`- contains all functions that are used in the scripts
 - `ścripts` - contains all script files (figure scripts and auxiliary scripts)
 
-For example, to create Figure 1, run the script `Figure_1.m`.
+To create Figure 1, run the script `Figure_1.m`, and so on. Some scripts require a mat file as input. 
+For example, to create Figure 5, you will first need to run m̀aketask.m`, `runtask.m`, `collate_fitness.m`. òptimization.m`.
+
