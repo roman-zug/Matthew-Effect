@@ -8,10 +8,15 @@
 % called 'luck_matters.mat'.
 
 clear;
-load luck_matters.mat
+load('/home/roman/Desktop/Matlab/Romants-I/JEB/mat files/luck_matters_20250703_03.mat')
 
-cS = polyfit(initialluck, log(S + 1), 1);
-cL = polyfit(initialluck, log(L), 1);
+% Fit linear models to log-transformed data
+lmS = fitlm(initialluck, log(S + 1));
+lmL = fitlm(initialluck, log(L));
+
+% Extract coefficients for exponential curve
+cS = flip(lmS.Coefficients.Estimate'); % [slope, intercept] for polyval
+cL = flip(lmL.Coefficients.Estimate');
 
 I = 0:55;
 
@@ -26,12 +31,20 @@ set(fig, 'Position', [400, 100, figureWidth, figureHeight]);
 
 tiledlayout(1, 2);
 
+% Function to annotate p and R²
+annotate = @(lm) sprintf('p = %.3g\nR² = %.2f', ...
+    lm.Coefficients.pValue(2), ...
+    lm.Rsquared.Ordinary);
+
+% First subplot: S
 nexttile;
-plot(initialluck, S, 'o', I, yS);
+plot(initialluck, S, '.', I, yS, 'LineWidth', 1.5);
 xlabel('Initial workforce development', 'FontSize', 14);
 ylabel('Total production of sexuals', 'FontSize', 14);
+text(0.05, 0.95, annotate(lmS), 'Units', 'normalized', 'FontSize', 12);
 
 nexttile;
-plot(initialluck, L, 'o', I, yL);
+plot(initialluck, L, '.', I, yL, 'LineWidth', 1.5);
 xlabel('Initial workforce development', 'FontSize', 14);
 ylabel('Queen lifespan', 'FontSize', 14);
+text(0.05, 0.95, annotate(lmL), 'Units', 'normalized', 'FontSize', 12);

@@ -1,6 +1,6 @@
 % Script: luck_matters
 % 
-% Purpose: This script runs matthew.m for 250 colonies, using the optimal
+% Purpose: This script runs matthew.m for 1000 colonies, using the optimal
 % {x*, y*} combination from Figure_4, to compute a measure of early 
 % performance called 'initialluck', which is the sum of the workforce size
 % measured over the first 10 events in a colony life cycle. If all events 
@@ -24,7 +24,7 @@ params = [a1, a2, a3, mu_q0, mu_w];
 xopt = 0.7524; % same xopt value as in Figure_4.m
 yopt = 9.9091; % same yopt value as in Figure_4.m
 
-for i=1:250
+for i=1:1000
     i
     [lifespan, total_eggs, total_sexuals, rate_eggs, rate_sexuals, t_series, eggs_series, sexuals_series, workforce_series] = matthew(params, xopt, yopt);
     initialluck(i) = sum(workforce_series(1:min(10,length(workforce_series))));
