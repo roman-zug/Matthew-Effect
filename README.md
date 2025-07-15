@@ -1,5 +1,7 @@
 # Matthew-Effect
 
+[![DOI](https://zenodo.org/badge/952036632.svg)](https://doi.org/10.5281/zenodo.15910468)
+
 This repository contains MATLAB files used to develop the model and to create the figures in the paper 
 
 "Luck can explain the positive link between fecundity and longevity: The Matthew effect in social insects and beyond". 
